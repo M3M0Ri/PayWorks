@@ -1,0 +1,16 @@
+    {%if is_authenticated %}
+        <h1>Hello {{name}}</h1>
+    {% else %}
+        <h1>Hello User</h1>
+    {% endif %}
+    <h1>Age: {{age}}</h1>
+    <h2>{{first_list.0}}</h2>
+    <h3>{{temp_object.x}}</h3>
+
+    {% for x in first_list %}
+    <p>First: {{x}} </p>
+    {% endfor %}
+    <P> len of list : {{first_list | length}}</P>
+    {% comment "first comment" %}
+    sddsd
+    {% endcomment%}
