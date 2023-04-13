@@ -8,3 +8,6 @@ class JobPost(models.Model):
     description = models.CharField(max_length=200)
     data = models.DateTimeField(auto_now_add=True)
     salary = models.IntegerField()
+
+    def __str__(self):
+        return self.title
