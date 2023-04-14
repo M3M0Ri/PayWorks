@@ -1,5 +1,5 @@
 <ul>
-  {% for job in job_title_list %}
+  {% for job in jobs %}
   <li>
     <a href ="{% url 'jobs_detail' forloop.counter0 %}"><h1>{{job}}</h1></a>
   </li>
