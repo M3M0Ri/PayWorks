@@ -58,8 +58,8 @@ def job_detail(request, id):
         # return_html = f"<h1>{job_title[int(id)]}</h1> " \
         #               f"<h3>{jop_description[int(id)]} </h3>"
         # return HttpResponse(return_html)
-        context = {"job_title": job_title[id],
-                   "jop_description": jop_description[id]}
+        job = JobPost.objects.get(id=id)
+        context = {"job": job}
         return render(request, "app/job_detail.html", context)
     except:
         return HttpResponseNotFound("Not Found")
