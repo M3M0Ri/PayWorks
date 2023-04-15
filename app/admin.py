@@ -1,6 +1,9 @@
 from django.contrib import admin
 from app.models import JobPost
 
-# Register your models here.
-# test to check git error
-admin.site.register(JobPost)
+
+class JobAdmin(admin.ModelAdmin):
+    list_display = ("__str__", "title", "date", "salary",)
+
+
+admin.site.register(JobPost, JobAdmin)
