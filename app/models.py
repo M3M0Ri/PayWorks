@@ -5,11 +5,17 @@ from django.utils.text import slugify
 class Skills(models.Model):
     name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class Author(models.Model):
     name = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
     designation = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.name}, {self.company}"
 
 
 class Location(models.Model):
@@ -18,6 +24,9 @@ class Location(models.Model):
     state = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
     zip = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.country}, {self.city}"
 
 
 class JobPost(models.Model):
