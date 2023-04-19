@@ -2,6 +2,10 @@ from django.db import models
 from django.utils.text import slugify
 
 
+class Skills(models.Model):
+    name = models.CharField(max_length=200)
+
+
 class Author(models.Model):
     name = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
@@ -28,6 +32,7 @@ class JobPost(models.Model):
                                     on_delete=models.CASCADE)
     author = models.ForeignKey(Author, on_delete=models.CASCADE,
                                null=True)
+    skills = models.ManyToManyField(Skills)
 
     def save(self, *args, **kwargs):
         if not self.id:
