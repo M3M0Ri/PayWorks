@@ -8,6 +8,11 @@
 </head>
 <body>
       <form method="post">
+          {% csrf_token %}
+
+          {% if email_error_empty %}
+                <p>{{email_error_empty}}</p>
+          {%endif%}
         <label for="f_name">First Name</label>
         <input type="text" id="f_name" name="firstname" placeholder="Your First Name" required>
         <br>
