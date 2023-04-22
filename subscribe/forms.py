@@ -8,6 +8,7 @@ class SubscribeForm(forms.ModelForm):
         model = Subscribe
         fields = "__all__"
 
+
 # class SubscribeForm(forms.Form):
 #     first_name = forms.CharField(max_length=100, required=False)
 #     last_name = forms.CharField(max_length=100)
@@ -18,4 +19,3 @@ class SubscribeForm(forms.ModelForm):
 #         if "," in data:
 #             raise forms.ValidationError("Invalid First Name")
 #         return data
-
