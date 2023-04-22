@@ -11,3 +11,4 @@ class SubscribeForm(forms.Form):
         if "," in data:
             raise forms.ValidationError("Invalid First Name")
         return data
+
