@@ -9,23 +9,32 @@
 <body>
       <form method="post">
         {% csrf_token %}
-        <div class="subscribe_field">
-          {{ form.first_name.errors }}
-          <label for="{{form.first_name.id_for_label}}">{{form.first_name.label}}</label>
-          {{ form.first_name }}
-      </div>
+          {% for field in form %}
+          <div class="subscribe_field">
+              {{field.errors}}
+              {{field.label_tag}}
+              {{field}}
 
-      <div class="subscribe_field">
-        {{ form.last_name.errors }}
-          <label for="{{form.last_name.id_for_label}}">{{form.last_name.label}}</label>
-          {{ form.last_name }}
-      </div>
+          </div>
+          {% endfor%}
 
-      <div class="subscribe_field">
-        {{ form.email.errors }}
-          <label for="{{form.email.id_for_label}}">{{form.email.label}}</label>
-          {{ form.email }}
-      </div>
+<!--        <div class="subscribe_field">-->
+<!--          {{ form.first_name.errors }}-->
+<!--          <label for="{{form.first_name.id_for_label}}">{{form.first_name.label}}</label>-->
+<!--          {{ form.first_name }}-->
+<!--      </div>-->
+
+<!--      <div class="subscribe_field">-->
+<!--        {{ form.last_name.errors }}-->
+<!--          <label for="{{form.last_name.id_for_label}}">{{form.last_name.label}}</label>-->
+<!--          {{ form.last_name }}-->
+<!--      </div>-->
+
+<!--      <div class="subscribe_field">-->
+<!--        {{ form.email.errors }}-->
+<!--          <label for="{{form.email.id_for_label}}">{{form.email.label}}</label>-->
+<!--          {{ form.email }}-->
+<!--      </div>-->
 
         {% comment %} {{form.as_ul}}
         <input type="submit" value="Submit"> {% endcomment %}
