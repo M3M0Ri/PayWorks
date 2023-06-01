@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscribe Form</title>
+    <style>
+        h1{
+        color:red;
+
+        }
+
+
+    </style>
 </head>
 <body>
+    <h1> Subscribe From </h1>
       <form method="post">
         {% csrf_token %}
           {% for field in form %}
@@ -58,6 +67,12 @@
         <input type="submit" value="Submit">
 
       </form>
+      <button onclick="popup()"> Click me</button>
+    <script>
+        function popup(){
+        alert("Hey! I am your alert box.");
+        }
+    </script>
 
 </body>
 </html>
