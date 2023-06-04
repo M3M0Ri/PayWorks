@@ -12,5 +12,13 @@
         {{form.as_p}}
         <button type="submit"> Upload</button>
     </form>
+    {% if saved_object %}
+        <h2> Upload Successfully: {{saved_object.image.url}}</h2>
+        <h2> Image description: {{saved_object.description}}</h2>
+        <img src="{{saved_object.image.url}}" alt="image" style="max-height:500px">
+
+    {% endif %}
+
+
 </body>
 </html>
