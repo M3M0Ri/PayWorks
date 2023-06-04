@@ -1,8 +1,14 @@
 from django import forms
-from .models import Uploads
+from .models import Uploads, UploadFile
 
 
-class UploadFrom(forms.ModelForm):
+class UploadForm(forms.ModelForm):
     class Meta:
         model = Uploads
+        fields = '__all__'
+
+
+class UploadFileForm(forms.ModelForm):
+    class Meta:
+        model = UploadFile
         fields = '__all__'
