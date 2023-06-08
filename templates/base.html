@@ -1,29 +1,4 @@
-{% extends 'base.html' %}
-{% block title %}PayWorks | {{job.title}}{% endblock title %}
-
-{% block content%}
-<section>
-      <div class="container">
-        <div class="view-post">
-          <h1 class="jobtitle">
-            {{ job.title }}
-          </h1>
-          <p class="location it">Location: <span>{{job.location.city}}</span></p>
-          <p class="status it">Type: <span>{{job.type}}</span></p>
-          <p class="budget it">Salary: <span>{{job.salary}}</span></p>
-          <div class="desc">
-            <p class="details">
-              {{job.description}}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-{% endblock content%}
-
 {% load static %}
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,7 +10,7 @@
       href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
       rel="stylesheet"
     />
-    <title>View job</title>
+    <title>{% block title %}Job's Website{% endblock title %}</title>
   </head>
   <body>
     <header>
@@ -51,6 +26,10 @@
         </div>
       </nav>
     </header>
+
+    {% block content %}
+
+    {% endblock content %}
 
     <script src="{% static 'app/app.js' %}"></script>
   </body>
